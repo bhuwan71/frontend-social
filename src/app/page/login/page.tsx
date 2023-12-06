@@ -1,11 +1,11 @@
 'use client'
 import Link from 'next/link';
 import React, { useState } from 'react';
-
+import { useRouter } from 'next/navigation'
 const Page = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const router = useRouter()
     const handleLogin = (e: any) => {
         e.preventDefault();
         // Perform login authentication or other actions with the email and password
@@ -13,6 +13,8 @@ const Page = () => {
         console.log('Email:', email);
         console.log('Password:', password);
         // You can add your login logic here
+        router.push('/page/Home')
+
     };
 
     return (
@@ -45,18 +47,12 @@ const Page = () => {
                     />
                 </div>
                 <div className="flex items-center justify-between">
-                    <Link
-                        href="/home"
+                    <button
+                        className="w-full bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        type="submit"
                     >
-                        <button
-                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                            type="submit"
-
-                        >
-                            Sign In
-                        </button>
-                    </Link>
-
+                        Sign In
+                    </button>
                 </div>
             </form>
         </div>

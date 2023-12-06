@@ -3,8 +3,12 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 
-const protectedRoutes = ["/settings"];
+const protectedRoutes = ["/page/Home"];
 const isAuthenticated = false;
+
+if(isAuthenticated){
+  protectedRoutes.push("/page/login")
+}
 
 export default function middleware(req: NextRequest) {
   if (!isAuthenticated && protectedRoutes.includes(req.nextUrl.pathname)) {
