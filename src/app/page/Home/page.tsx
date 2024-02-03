@@ -1,12 +1,15 @@
-import React from 'react'
+import NavBar from "@/app/component/NavBar/NavBar";
+import RootLayout from "@/app/layout";
 
-const page = () => {
-
+const Home = () => {
   return (
-    <div>
-      <h2>Home page</h2>
-    </div>
-  )
-}
+    <>
+      <RootLayout>
+        <NavBar/>
+        <h1>Homepage Content</h1>
+      </RootLayout>
+    </>
+  );
+};
 
-export default page
+export default Home;

@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 
 
 const protectedRoutes = ["/page/Home"];
-const isAuthenticated = false;
+const isAuthenticated = true;
 
 if(isAuthenticated){
   protectedRoutes.push("/page/login")
